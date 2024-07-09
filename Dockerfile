@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:bookworm
 
 ENV CANTALOUPE_VERSION=5.0.6
 
