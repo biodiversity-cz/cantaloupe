@@ -9,6 +9,6 @@ updates:
       schedule:
           interval: "monthly"
       groups:
-          all-dependencies:
+          GitHubActions-dependencies:
               patterns:
                   - "*"
