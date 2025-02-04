@@ -11,7 +11,7 @@ RUN apt-get update -qy && apt-get dist-upgrade -qy && \
     apt-get install -qy --no-install-recommends curl imagemagick \
     libopenjp2-tools ffmpeg unzip default-jre-headless && \
     apt-get -qqy autoremove && apt-get -qqy autoclean && \
-    rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/* \
+    rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
 # Run non privileged
 RUN adduser --system cantaloupe
