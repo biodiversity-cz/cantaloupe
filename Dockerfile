@@ -20,7 +20,8 @@ WORKDIR /
 
 # Get and unpack Cantaloupe release archive
 RUN curl --silent --fail -OL https://github.com/medusa-project/cantaloupe/releases/download/v$CANTALOUPE_VERSION/Cantaloupe-$CANTALOUPE_VERSION.zip \
-    && unzip Cantaloupe-$CANTALOUPE_VERSION.zip -d cantaloupe \
+    && unzip Cantaloupe-$CANTALOUPE_VERSION.zip  \
+    && ln -s cantaloupe-$CANTALOUPE_VERSION cantaloupe \
     && rm Cantaloupe-$CANTALOUPE_VERSION.zip \
     && mv /cantaloupe/cantaloupe-$CANTALOUPE_VERSION.jar /cantaloupe/cantaloupe.jar \
     && mkdir -p /var/log/cantaloupe /var/cache/cantaloupe \
