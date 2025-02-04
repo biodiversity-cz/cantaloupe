@@ -33,7 +33,7 @@ jobs:
             -   name: Build Docker image
                 run: |
                     docker build \
-                      --build-arg BIOCASE_VERSION=${{ matrix.version }} \
+                      --build-arg CANTALOUPE_VERSION=${{ matrix.version }} \
                       -t ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ matrix.version }} .
 
             -   name: Push Docker image
