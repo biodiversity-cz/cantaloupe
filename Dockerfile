@@ -14,7 +14,7 @@ RUN apt-get update -qy && apt-get dist-upgrade -qy && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
 # Run non privileged
-RUN useradd -r -s /bin/false cantaloupe
+RUN useradd -r -u 1000 -s /bin/false cantaloupe
 RUN mkdir -p /iiif_cache && chown -R cantaloupe:cantaloupe /iiif_cache
 
 WORKDIR /
