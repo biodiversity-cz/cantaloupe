@@ -13,7 +13,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
             matrix:
-                version: [ 5.0.6 ]  # Define versions
+                version: [ 5.0.6, 5.0.7 ]  # Define versions
         permissions:
             contents: read
             packages: write
