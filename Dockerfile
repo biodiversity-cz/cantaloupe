@@ -14,7 +14,7 @@ RUN apt-get update -qy && apt-get dist-upgrade -qy && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
 # Run non privileged
-RUN adduser --system cantaloupe
+RUN useradd -r -s /bin/false cantaloupe
 
 WORKDIR /
 
