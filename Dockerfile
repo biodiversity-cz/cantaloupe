@@ -15,6 +15,7 @@ RUN apt-get update -qy && apt-get dist-upgrade -qy && \
 
 # Run non privileged
 RUN useradd -r -s /bin/false cantaloupe
+RUN mkdir -p /iiif_cache && chown -R cantaloupe:cantaloupe /iiif_cache
 
 WORKDIR /
 
