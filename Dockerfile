@@ -9,7 +9,7 @@ VOLUME /imageroot
 # Update packages and install tools
 RUN apt-get update -qy && apt-get dist-upgrade -qy && \
     apt-get install -qy --no-install-recommends curl imagemagick \
-    libopenjp2-7 ffmpeg unzip default-jre-headless && \
+    libopenjp2-7 libopenjp2-tools ffmpeg unzip default-jre-headless && \
     apt-get -qqy autoremove && apt-get -qqy autoclean && \
     rm -rf /var/lib/apt/lists/* /var/lib/log/* /tmp/* /var/tmp/*
 
@@ -31,4 +31,6 @@ RUN curl --silent --fail -OL https://github.com/medusa-project/cantaloupe/releas
 
 
 USER cantaloupe
-CMD ["sh", "-c", "java -Dcantaloupe.config=/cantaloupe/cantaloupe.properties.sample -jar /cantaloupe/cantaloupe.jar"]
+
+ENV JAVA_OPTS="-Xms2g -Xmx4g"
+CMD ["java", "$JAVA_OPTS", "-Dcantaloupe.config=/cantaloupe/cantaloupe.properties.sample", "-jar", "/cantaloupe/cantaloupe.jar"]
