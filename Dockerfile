@@ -32,5 +32,6 @@ RUN curl --silent --fail -OL https://github.com/medusa-project/cantaloupe/releas
 
 USER cantaloupe
 
-ENV JAVA_OPTS="-Xms2g -Xmx4g"
-CMD ["java", "$JAVA_OPTS", "-Dcantaloupe.config=/cantaloupe/cantaloupe.properties.sample", "-jar", "/cantaloupe/cantaloupe.jar"]
+ENTRYPOINT ["java"]
+CMD ["-Xms2g", "-Xmx4g", "-Dcantaloupe.config=/cantaloupe/cantaloupe.properties.sample", "-jar", "/cantaloupe/cantaloupe.jar"]
+
